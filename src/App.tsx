@@ -12,7 +12,7 @@ export const App: React.FC = () => {
         <header className="App-header">
           <Nav>
             <GiCookie />
-            <Logo to={"/"}>Elevated Cookies</Logo>
+            <Logo to={"/"}>Elevation Cookies</Logo>
             <GiMountainRoad />
           </Nav>
         </header>
