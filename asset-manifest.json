@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/redesigned-chainsaw/static/css/main.06d824cf.css",
-    "main.js": "/redesigned-chainsaw/static/js/main.181da911.js",
+    "main.js": "/redesigned-chainsaw/static/js/main.20c39cea.js",
     "static/js/787.d67d0861.chunk.js": "/redesigned-chainsaw/static/js/787.d67d0861.chunk.js",
     "index.html": "/redesigned-chainsaw/index.html",
     "main.06d824cf.css.map": "/redesigned-chainsaw/static/css/main.06d824cf.css.map",
-    "main.181da911.js.map": "/redesigned-chainsaw/static/js/main.181da911.js.map",
+    "main.20c39cea.js.map": "/redesigned-chainsaw/static/js/main.20c39cea.js.map",
     "787.d67d0861.chunk.js.map": "/redesigned-chainsaw/static/js/787.d67d0861.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.06d824cf.css",
-    "static/js/main.181da911.js"
+    "static/js/main.20c39cea.js"
   ]
 }
