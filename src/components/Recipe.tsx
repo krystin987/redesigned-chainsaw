@@ -24,7 +24,7 @@ export const Recipe: React.FC<RecipeProps> =  ({recipe}) => {
     let params = "5szxNaw2JPw6YJdBiUoBlZ"
     
     const [details, setDetails] = useState<RecipeProps| null>({recipe});
-    const [activeTab, setActiveTab] = useState<string>("instructions");
+    const [activeTab, setActiveTab] = useState<string>("ingredients");
     
     const client = contentful.createClient({
         space: 'h955c18fn014',
@@ -54,11 +54,11 @@ export const Recipe: React.FC<RecipeProps> =  ({recipe}) => {
              <img src={details.recipe.imageURL} alt={""} />
           </div>
           <Info>
+          <Button className={activeTab === "ingredients" ? "active" : ""} onClick={() => setActiveTab("ingredients")}>
+              Ingredients
+            </Button>
             <Button className={activeTab === "instructions" ? "active" : ""} onClick={() => setActiveTab("instructions")}>
               Instructions
-            </Button>
-            <Button className={activeTab === "ingredients" ? "active" : ""} onClick={() => setActiveTab("ingredients")}>
-              Ingredients
             </Button>
             {activeTab === "instructions" && (
               <div>
