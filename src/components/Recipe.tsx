@@ -19,13 +19,13 @@ export interface RecipeProps {
 }
 
 export const Recipe: React.FC<RecipeProps> =  ({recipe}) => {
-    
+
     // let params = useParams();
     let params = "5szxNaw2JPw6YJdBiUoBlZ"
-    
+
     const [details, setDetails] = useState<RecipeProps| null>({recipe});
     const [activeTab, setActiveTab] = useState<string>("ingredients");
-    
+
     const client = contentful.createClient({
         space: 'h955c18fn014',
         accessToken: process.env.REACT_APP_API_KEY,
@@ -34,17 +34,17 @@ export const Recipe: React.FC<RecipeProps> =  ({recipe}) => {
       useEffect(() => {
         fetchDetails();
       }, []);
-    
+
       const fetchDetails: VoidFunction = async () => {
         const entry = await client.getEntry([params]);
         setDetails(entry.fields)
       }
-      
+
       if(details !== null) {
-        console.log(details)
+        // console.log(details)
         return (
           <DetailWRapper>
-          <div> 
+          <div>
              <h2>{details.recipe.name}</h2>
              <ul>
               {details.recipe.summary?.map((summary_line, index) => (
@@ -74,12 +74,11 @@ export const Recipe: React.FC<RecipeProps> =  ({recipe}) => {
                 </ol>
               </div>
             )}
-    
+
             {activeTab === "ingredients" && (
               <div>
                 <div>
                   <Barometer barometric_pressure ={0}/>
-                  {/* <SliderComponent elevation_value={0} unit_of_measure="feet" /> */}
                 </div>
                 <ul>
                   {details.recipe.ingredients?.map((ingredient, index) => (
@@ -87,12 +86,8 @@ export const Recipe: React.FC<RecipeProps> =  ({recipe}) => {
                   ))}
                 </ul>
               </div>
-            )} 
-    
-            {/* {altitude && (
-                console.log(details)
-            )} */}
-    
+            )}
+
           </Info>
         </DetailWRapper>
 
@@ -101,7 +96,7 @@ export const Recipe: React.FC<RecipeProps> =  ({recipe}) => {
         return (
           <h1>Loading...</h1>
       );
-     }     
+     }
 }
 
 
@@ -122,7 +117,6 @@ const DetailWRapper = styled.div`
   /* margin-top: 10rem; */
   margin-bottom: 5rem;
   display: flex:
-
   h2 {
     margin-bottom: 2rem;
   }

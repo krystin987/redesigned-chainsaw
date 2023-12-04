@@ -8,7 +8,7 @@ export interface TemperatureProps {
 
 export const TemperatureSlider: React.FC<TemperatureProps> = ({ temperature_value, temperature_unit }) => {
     const [temperature, setTemp] = useState<number | null | number[]>(45)
-    const [temp_unit, setTempUnit] = useState<string | null | string[]>("Farenheight")
+    const [temp_unit, setTempUnit] = useState<string | null | string[]>("Fahrenheight")
 
     const handleChange = (temperature: number | null | number[]): void => {
         setTemp(temperature)
@@ -27,8 +27,8 @@ export const TemperatureSlider: React.FC<TemperatureProps> = ({ temperature_valu
                 max={110}
                 onChange={(_, value) => handleChange(value)}
         />
-        <h2>Temperature: {temperature}</h2>
-        <h2>Unit: {temp_unit}</h2>
+        <h3>Temperature: {temperature}</h3>
+        <h3>Unit: {temp_unit}</h3>
       </div>
 
     )

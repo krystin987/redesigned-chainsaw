@@ -4,15 +4,17 @@ import { Slider } from '@mui/material';
 export interface SliderProps {
   elevation_value: number
   unit_of_measure: string
+  onChange: (elevation_value: number|undefined, unit_of_measure: string | undefined) => void
 }
 
-export const ElevationSlider: React.FC<SliderProps> =  ({elevation_value, unit_of_measure}) =>  {
+export const ElevationSlider: React.FC<SliderProps> =  (props: SliderProps) =>  { //{elevation_value, unit_of_measure}
 
   const [elevation, setElevation] = useState<number | null | number[]>(0)
   const [unit, setUnit] = useState<string | null | string[]>("feet")
 
   const handleChange = (elevation: number | null | number[]): void => {
     setElevation(elevation)
+    // props.onChange(_, elevation)
   }
 
   return (
@@ -26,8 +28,8 @@ export const ElevationSlider: React.FC<SliderProps> =  ({elevation_value, unit_o
         onChange={(_, value) => handleChange(value)}
         
         />
-        <h2>Elevation: {elevation}</h2>
-        <h2>Unit: {unit}</h2>
+        <h3>Elevation: {elevation}</h3>
+        <h3>Unit: {unit}</h3>
     </div>
   );
 }
